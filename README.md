@@ -14,9 +14,16 @@ The web app has 3 pages:
 ## Meals filtered by category
 
 ## Meals filtered by category
+
 ![Screenshot](docs/shot1.png)
+
 ## Specific Meal Details
+
 ![Screenshot](docs/shot2.png)
+
+## Redux Eplanation Diagram
+
+![Screenshot](docs/shot3.png)
 
 ## Built With
 
@@ -28,7 +35,7 @@ The web app has 3 pages:
 
 ## [Live Link](https://gracious-shirley-68b325.netlify.app/)
 
-## [Presentation]()
+## [Presentation](https://www.youtube.com/watch?v=GLjrh3gPZo0)
 
 # Getting Started
 
