@@ -13,11 +13,10 @@ The web app has 3 pages:
 
 ## Meals filtered by category
 
-![Screenshot](docs/Screenshot1.png)
-
+## Meals filtered by category
+![Screenshot](docs/shot1.png)
 ## Specific Meal Details
-
-![Screenshot](docs/Screenshot2.png)
+![Screenshot](docs/shot2.png)
 
 ## Built With
 
