@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 const Header = ({ categories }) => (
   <nav className="navbar navbar-expand-lg navbar-light bg-dark">
     <div className="container">
-      <span className="navbar-brand text-white pg-title" href="#">Catalogue of Recipes</span>
+      <span className="navbar-brand text-white pg-title" href="#">Richies Recipe</span>
       <button className="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon text-white" />
       </button>
