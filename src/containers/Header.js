@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import Search from '../containers/Search';
+import Search from './Search';
 import styles from '../styles/Header.module.css';
 
 const cx = classNames;

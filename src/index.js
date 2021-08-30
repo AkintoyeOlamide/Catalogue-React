@@ -2,9 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
 import { Provider } from 'react-redux';
+import { Link } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import configureStore from './redux/configureStore';
 import App from './App';
+import styles from './styles/Header.module.css';
+
+  <ul className={(styles.menus)}>
+    <li className={(styles.menu__item)}>
+      <Link className={(styles.menu__link)} to="/categories">Categories</Link>
+    </li>
+  </ul>;
 
 const state = {
   categories: [
