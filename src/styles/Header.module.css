@@ -28,7 +28,7 @@
 }
 
 .menu__link:hover {
-  color: #ffffff;
+  color: #fff;
   transform: scale(1.1);
   transition: 0.3s all linear;
 }
