@@ -5,7 +5,7 @@ exports[`should test for search component snapshot 1`] = `
   <input
     class="search-input"
     name="search"
-    placeholder="Search your recepies"
+    placeholder="Search your recipes"
     type="search"
   />
 </form>
