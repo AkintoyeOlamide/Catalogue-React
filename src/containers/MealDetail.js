@@ -1,10 +1,14 @@
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
+import classNames from 'classnames';
 import { connect } from 'react-redux';
-import React, { useEffect } from 'react';
-import { fetchMealById } from '../api/api';
-import * as actionsType from '../actions/actionTypes';
+import { useEffect } from 'react';
+import { fetchMealById } from '../redux/actions/thunk';
+import * as actionsType from '../redux/actions/actionTypes';
+import card from '../styles/card.css';
+import styles from '../styles/MealDetail.module.css';
+
+const cx = classNames.bind(card);
 
 const MealDetail = ({ meal: { status, meal, error }, dispatch }) => {
   const { id } = useParams();
@@ -56,7 +60,7 @@ const MealDetail = ({ meal: { status, meal, error }, dispatch }) => {
     if (instructions) {
       const list = instructions.split(new RegExp(/\n/)).filter((item) => item.length > 1);
       return (
-        <ul className="items">
+        <ul className={cx(styles.items)}>
           {/* eslint-disable-next-line */}
           {list.map((item, index) => <li key={index}>{item}</li>)}
         </ul>
@@ -66,21 +70,23 @@ const MealDetail = ({ meal: { status, meal, error }, dispatch }) => {
   };
 
   return (
-    <div className="container">
-      <div className="">
-        <h3 className="heading">{meal.strMeal}</h3>
-        <div className="d-lg-flex justify-content-evenly">
-          <img src={meal.strMealThumb} alt={meal.strMeal} className="img-fluid pt-4 img" />
-          <div className="ingredients ">
-            <h4 className="heading">Ingredients</h4>
-            <ul className="items">
+    <div>
+      <div className={cx('card-detail')}>
+        <img className={cx('card-img')} src={meal.strMealThumb} alt={meal.strMeal} />
+        <div>
+          <h3 className={cx('card-title')}>{meal.strMeal}</h3>
+          <div className={cx(styles.ingredients)}>
+            <h4 className={cx(styles.heading)}>Ingredients</h4>
+            <ul className={cx(styles.listItem)}>
               {renderIngrediants(meal)}
             </ul>
           </div>
-        </div>
-        <div className="instructions">
-          <h4 className="heading">Instructions</h4>
-          {renderInstructions(meal.strInstructions)}
+          <div className={cx(styles.instructions)}>
+            <h4 className={cx(styles.heading)}>Instructions</h4>
+            <div data-testid="meal-description" className={cx(styles.instructions)}>
+              {renderInstructions(meal.strInstructions)}
+            </div>
+          </div>
         </div>
       </div>
     </div>

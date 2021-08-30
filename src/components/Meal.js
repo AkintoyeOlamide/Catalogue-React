@@ -1,24 +1,28 @@
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import React from 'react';
 import { Link } from 'react-router-dom';
-import '../index.css';
+import card from '../styles/card.css';
+import styles from '../styles/Meal.module.css';
+
+const cx = classNames.bind(card);
 
 const Meal = ({ meal }) => (
-  <div className="card meal-card">
-
-    <Link to={`/meal/${meal.idMeal}`} className="link">
-      <img src={meal.strMealThumb} alt={meal.strMeal} className="card-img-top" />
-      <div>
-        <p className="card-subtitle mb-2 text-muted">
-          <span className="p-2">View</span>
-          <span>Details</span>
+  <div className={cx('card')}>
+    <Link to={`/meal/${meal.idMeal}`} className={cx('card-link')}>
+      <img className={cx('card-img')} src={meal.strMealThumb} alt={meal.strMeal} />
+      <div className={cx('card-body')}>
+        <p className={cx('card-subtitle')}>
+          <span>Serves</span>
+          <span className={cx(styles['bold-info'])}>5</span>
+          <span className={cx(styles.divider)}>|</span>
+          <span>Prep time</span>
+          <span className={cx(styles['bold-info'])}>20 mins</span>
         </p>
-        <h5 className="card-title text-dark">
+        <h3 className={cx('card-title')}>
           {meal.strMeal}
-        </h5>
+        </h3>
       </div>
     </Link>
-
   </div>
 );
 

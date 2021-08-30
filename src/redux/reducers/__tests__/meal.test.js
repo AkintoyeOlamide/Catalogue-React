@@ -1,4 +1,4 @@
-import meal from '../../reducers/meal';
+import meal from '../meal';
 import * as actionsType from '../../actions/actionTypes';
 
 describe('meal reducer', () => {

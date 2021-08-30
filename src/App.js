@@ -1,12 +1,12 @@
 import { BrowserRouter } from 'react-router-dom';
-import React from 'react';
-import Routes from './routes/Routes';
+import Routes from './config/Routes';
 import Header from './components/Header';
+import './styles/App.css';
 
 function App() {
   return (
-    <BrowserRouter forceRefresh>
-      <Header className="pb-5" />
+    <BrowserRouter>
+      <Header />
       <div className="App">
         <Routes />
       </div>

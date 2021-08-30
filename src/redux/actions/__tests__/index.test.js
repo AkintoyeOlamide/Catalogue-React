@@ -1,5 +1,5 @@
-import * as actions from '../../actions/index';
-import * as actionsType from '../../actions/actionTypes';
+import * as actions from '../index';
+import * as actionsType from '../actionTypes';
 
 test('should create an action to load meals', () => {
   const expectedAction = {
@@ -55,13 +55,11 @@ test('should create an action to error meal', () => {
 
 test('should create an action to success meal', () => {
   const data = {
-    meals: [
-      {
-        strMeal: 'First meal',
-        strMealThumb: 'image path',
-        idMeal: '1234',
-      },
-    ],
+    meals: [{
+      strMeal: 'First meal',
+      strMealThumb: 'image path',
+      idMeal: '1234',
+    }],
   };
   const expectedAction = {
     type: actionsType.SUCCESS_MEAL,
@@ -69,40 +67,4 @@ test('should create an action to success meal', () => {
   };
 
   expect(actions.successMeal(data)).toEqual(expectedAction);
-});
-
-// Negative
-
-test('should create an action to error meal', () => {
-  const error = 'Somethig went wrong';
-  const expectedAction = {
-    type: actionsType.ERROR_MEAL,
-    error,
-  };
-
-  expect(actions.errorMeal(error)).Not.toEqual(expectedAction);
-});
-
-test('should create an action to success meals', () => {
-  const data = {
-    meals: {
-      strMeal: 'First meal',
-      strMealThumb: 'image path',
-      idMeal: '1234',
-    },
-  };
-  const expectedAction = {
-    type: actionsType.SUCCESS_MEALS,
-    data,
-  };
-
-  expect(actions.successMeals(data)).toBeFalsy(expectedAction);
-});
-
-test('should create an action to load meals', () => {
-  const expectedAction = {
-    type: actionsType.LOADING_MEALS,
-  };
-
-  expect(actions.loadingMeals()).Not.toEqual(expectedAction);
 });

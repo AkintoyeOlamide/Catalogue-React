@@ -1,4 +1,4 @@
-import category from '../../reducers/category';
+import category from '../category';
 import * as actionsType from '../../actions/actionTypes';
 
 describe('category reducer', () => {
